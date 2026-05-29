@@ -875,7 +875,7 @@ const studentTwo = {
   grades: [4, 5, 5, 5, 5]
 };
 
-// 2. Calculate the average grade for each student
+// 2. Функция для расчета среднего балла (работает с любым количеством оценок)
 function calculateAverage(grades) {
   const sum = grades.reduce((total, grade) => total + grade, 0);
   return sum / grades.length;
@@ -884,17 +884,17 @@ function calculateAverage(grades) {
 const avgOne = calculateAverage(studentOne.grades);
 const avgTwo = calculateAverage(studentTwo.grades);
 
-// 2. Print the average grades
-console.log(`${studentOne.name} has the average grade: ${avgOne.toFixed(2)}`);
-console.log(`${studentTwo.name} has the average grade: ${avgTwo.toFixed(2)}`);
+// Выводим средние баллы в консоль
+console.log(`${studentOne.name} имеет средний балл: ${avgOne.toFixed(2)}`);
+console.log(`${studentTwo.name} имеет средний балл: ${avgTwo.toFixed(2)}`);
 
-// 3. Print which student has the higher average
+// 3. Сравниваем результаты и выводим победителя
 if (avgOne > avgTwo) {
-  console.log(`${studentOne.name} has the higher average!`);
+  console.log(`${studentOne.name} имеет более высокий средний балл!`);
 } else if (avgTwo > avgOne) {
-  console.log(`${studentTwo.name} has the higher average.`);
+  console.log(`${studentTwo.name} имеет более высокий средний балл!`);
 } else {
-  console.log("Student one has the same average.");
+  console.log("У обоих студентов одинаковый средний балл.");
 }
 
 /*
@@ -922,11 +922,11 @@ if (avgOne > avgTwo) {
 
 // Write your code here:
 function describeValue(value) {
-  // 1. print the value and its type
-  console.log("Value:", value);
-  console.log("Type (typeof):", typeof value);
+  // 1. Выводим само значение и его базовый тип
+  console.log("Значение:", value);
+  console.log("Тип (typeof):", typeof value);
 
-  // 2. check for null first, because typeof null is "object"
+  // 2. Проверяем на специфические типы данных
   if (value === null) {
     console.log("This is null");
   } else if (Array.isArray(value)) {
@@ -935,15 +935,15 @@ function describeValue(value) {
     console.log("This is an object");
   }
 
-  console.log("-------------------"); 
+  console.log("-------------------"); // Разделитель для удобства чтения
 }
 
-// Testing the function with different values:
-describeValue("Hello");       // String
-describeValue(42);            // Number
-describeValue(true);          // Boolean
+// Тестирование функции с разными типами данных:
+describeValue("Hello");       // Строка
+describeValue(42);            // Число
+describeValue(true);          // Булевое значение
 describeValue(null);          // Null
-describeValue([1, 2, 3]);     // Array
-describeValue({age: 25});     // Object
+describeValue([1, 2, 3]);     // Массив
+describeValue({age: 25});     // Объект
 
 console.log("End of practice file");
